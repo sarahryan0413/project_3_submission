@@ -20,4 +20,4 @@ The data used was sourced from: https://nuforc.org/subndx/?id=all
 
 ###  Libraries used that were not shown in class: GeoPy and Nominatim
 
-### To view our GitHub page for this project, go here: https://qstibbins.github.io/saucer-stats/
+### To view our GitHub page for this project, go here: https://sarahryan0413.github.io/project_3_submission/
