@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Saucer Sightings Dashboard</title>
+  <link rel="icon" href="static/icons/alien.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Leaflet JavaScript code -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Include PapaParse library (for CSV parsing) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+  <!-- Bytesized Alient font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bytesized&display=swap" rel="stylesheet">
+  
+  <!-- Audiowide font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bytesized&display=swap" rel="stylesheet">
+
+  <!-- Our CSS  -->
+  <link rel="stylesheet" href="./static/css/style.css" />
+</head>
+
+<body>
+
+  <div class="container audiowide-regular" >
+    <!-- Banner -->
+    <div class="row banner">
+      <div class="col-md-12 p-5 text-center bg-dark" style="color: white">
+        <h1>HELLO EARTHLINGS!</h1>
+        <p>Use the interactive visuals below to explore the dataset</p>
+      </div>
+    </div>
+    <br>
+
+    <!-- Sighting Map -->
+    <div class="row sightings-map">
+      <div class="col-md-12" style="height: 500px">
+        <label for"shapeFilter">Filter by UFO Shape: </label>
+        <select id="shapeFilter">
+          <option value="all">All Shapes</option>
+        </select>
+        <label>Map contains data from March 24, 2025 to April 7, 2025. </label>
+        
+        <div id="map"></div>
+      </div>
+    </div>
+    <br>
+
+    <!-- Charts -->
+    <div class="row sightings-charts pt-5">
+      <div class="col-md-3">
+        <div class="card card-body bg-dark">
+          <h6>UFO Sighting Year:</h6>
+          <p class="disclaimer">(for graph only)</p>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <br>
+        <div class="card card-primary bg-dark">
+          <div class="card-header">
+            <h4 class="card-title">UFO Sighting Info</h4>
+          </div>
+          <div id="sighting-metadata" class="card-body"></div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div id="linechart"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row footer pt-50">
+      <div class="col-md-12">
+        Data was collected from: https://nuforc.org/subndx/?id=all 
+      </div>
+    </div>
+  </div> 
+  
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/js/app.js"></script>
+  <script src="static/js/charts.js"></script>
+</body>
+
+</html>
